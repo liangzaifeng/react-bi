@@ -6,6 +6,9 @@ export default function Header() {
   const a = '1'
   console.log(a)
 
+  const b = 1
+  console.log(b)
+
   return (
     <div className={styles.header}>
       <div className="top">
