@@ -8,6 +8,8 @@ export default function Header() {
 
   const b = 1
   console.log(b)
+  const c = 1
+  console.log(c)
 
   return (
     <div className={styles.header}>
