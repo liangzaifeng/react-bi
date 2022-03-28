@@ -1,0 +1,21 @@
+.tabs-wrap {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  :global {
+    .left, .right {
+      display: flex;
+    }
+    .tab-item {
+      width: 140px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      margin-right: 20px;
+      &.active {
+        color: #7ce7fd;
+      }
+    }
+  }
+  
+}
