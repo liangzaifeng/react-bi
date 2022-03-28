@@ -3,7 +3,8 @@ import { Decoration5, Decoration8, Decoration10 } from '@jiaminghi/data-view-rea
 import Tabs from '../Tabs'
 import styles from './index.module.less'
 export default function Header() {
-  // 1
+  const a = '1'
+  console.log(a)
   return (
     <div className={styles.header}>
       <div className="top">
