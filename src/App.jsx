@@ -1,4 +1,4 @@
-import Layout from '@/Layout'
+import Layout from '@src/Layout'
 import React from 'react'
 
 export default function App() {

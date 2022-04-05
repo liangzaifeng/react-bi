@@ -1,16 +1,18 @@
+import useResize from '@hooks/useResize'
 import React, { useEffect, useRef } from 'react'
 import styles from './index.module.less'
-import useResize from '@/hooks/useResize'
 const echarts = require('echarts/lib/echarts')
 require('echarts/lib/component/grid')
 require('echarts/lib/chart/line')
+
 export default function A() {
   const refDom = useRef(null)
   const myChart = useRef(null)
   useResize(myChart)
+  // const a = true ? 1 : 2
 
   useEffect(() => {
-    let option = {
+    const option = {
       xAxis: {
         type: 'category',
         data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -34,6 +36,8 @@ export default function A() {
 
   return (
     <div
+      a="asdfasdfdsfdsdfssd"
+      b="ladsfjadalajkflasdfjlsdkfjakfdk"
       className={styles['div-a']}
       ref={refDom}
     >

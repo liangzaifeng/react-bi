@@ -1,17 +1,30 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    commonjs: true,
+    es6: true
   },
+  parser: 'babel-eslint',
   extends: ['eslint:recommended', 'plugin:react/recommended', 'standard', 'prettier'],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
+      modules: true
     },
-    ecmaVersion: 'latest'
+    // ecmaVersion: 'latest',
+    ecmaVersion: 6,
+    sourceType: 'module'
   },
   plugins: ['react', 'react-hooks'],
   rules: {
+    // 'operator-linebreak': [2, 'after', {
+    //   'overrides': {
+    //     '?' : 'before',
+    //     ':' : 'brfore'
+    //   }
+    // }],
+    // 'linebreak-style': [2, 'unix'],
     semi: 2, // 行末分号，根据编码习惯选择添加，这里配置的加分号
     'no-console': 0, // 禁用 console
     'comma-dangle': [2, 'never'], // 对象字面量项尾不能有逗号(always-multiline是有逗号)
@@ -38,6 +51,7 @@ module.exports = {
     'no-eval': 0, // 禁用 eval()，eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。
     'no-continue': 0, // 禁用 continue 语句
     'global-require': 1, // 要求 require() 出现在顶层模块作用域中
+    'comma-spacing': [2, { before: false, after: true }], // 控制逗号前后的空格
     camelcase: 2, // 强制驼峰法命名
     'import/no-extraneous-dependencies': 0,
     'import/prefer-default-export': 0,
@@ -84,16 +98,17 @@ module.exports = {
     'no-unreachable': 1, // 不能有无法执行的代码
     'no-mixed-spaces-and-tabs': 0, // 禁止混用tab和空格
     'prefer-arrow-callback': 0, // 比较喜欢箭头回调
-    'arrow-parens': 0, // 箭头函数用小括号括起来
-    'arrow-spacing': 0, // =>的前/后括号
+    'arrow-parens': ['error', 'as-needed'], // 箭头函数用小括号括起来
+    'arrow-spacing': ['error', { before: true, after: true }], // =>的前/后括号
     'jsx-a11y/href-no-hash': 0,
     'jsx-a11y/no-static-element-interactions': 0,
+    // 'react/jsx-one-expression-per-line': 2,
     quotes: [2, 'single'], // 单引号
     'no-debugger': 2, // 禁用debugger
     'no-var': 2, // 对var警告
     'no-irregular-whitespace': 0, // 不规则的空白不允许
     'no-trailing-spaces': 1, // 一行结束后面有空格就发出警告
-    'eol-last': 0, // 文件以单一的换行符结束
+    'eol-last': 0, // 文件以单一的换行符结束,
     'no-unused-vars': [2, { vars: 'all', args: 'after-used' }], // 不能有声明后未被使用的变量或参数
     'no-underscore-dangle': 0, // 标识符不能以_开头或结尾
     'no-alert': 2, // 禁止使用alert confirm prompt
@@ -114,12 +129,12 @@ module.exports = {
     'no-undef': 2, // 不能有未定义的变量
     'no-use-before-define': 0, // 未定义前不能使用
     'jsx-quotes': [2, 'prefer-double'], // 强制在JSX属性（jsx-quotes）中一致使用双引号
-    '@typescript-eslint/no-unused-vars': 0,
-    '@typescript-eslint/no-explicit-any': 0,
-    '@typescript-eslint/no-empty-interface': 0,
-    '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/camelcase': ['off', { properties: 'always' }], // 强制驼峰法命名（ts）
-    '@typescript-eslint/no-use-before-define': 0,
+    // '@typescript-eslint/no-unused-vars': 0,
+    // '@typescript-eslint/no-explicit-any': 0,
+    // '@typescript-eslint/no-empty-interface': 0,
+    // '@typescript-eslint/explicit-function-return-type': 0,
+    // '@typescript-eslint/camelcase': ['off', { properties: 'always' }], // 强制驼峰法命名（ts）
+    // '@typescript-eslint/no-use-before-define': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn'
     // "prettier/prettier":"2"
